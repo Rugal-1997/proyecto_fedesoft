@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+	belongs_to :humedal
 	has_secure_password
 	before_save :downcase_email
 	validacion_email = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i

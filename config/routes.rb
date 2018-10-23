@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :dia_eventos
+  resources :humedals
+  resources :servicios
   post 'user_token' => 'user_token#create'
   get 'users/current' => 'users#current'
   resources :users

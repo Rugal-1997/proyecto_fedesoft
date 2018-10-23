@@ -10,17 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181022160159) do
+ActiveRecord::Schema.define(version: 20181023184923) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "dia_eventos", force: :cascade do |t|
+    t.date "fecha_servicio"
+    t.bigint "servicio_id"
+    t.bigint "humedal_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["humedal_id"], name: "index_dia_eventos_on_humedal_id"
+    t.index ["servicio_id"], name: "index_dia_eventos_on_servicio_id"
+  end
+
+  create_table "humedals", force: :cascade do |t|
+    t.string "nombre"
+    t.string "localidad"
+    t.string "hectareas"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "servicios", force: :cascade do |t|
+    t.string "nombre"
+    t.string "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password_digest"
+    t.bigint "humedal_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["humedal_id"], name: "index_users_on_humedal_id"
   end
 
 end
