@@ -16,5 +16,12 @@
 		<label>Confirmar contraseña</label>
 		<input type="password" name="password" class="form-control" [(ngModel)]="formulario.user.password_confirmation">
 	</div>
-	<button class="btn btn-info" (click)="crear_Cuenta()">Crear Cuenta</button>
+	<div class="form-group">
+		<label>Seleccione el Humedal mas cercano</label>
+		<select class="form-control">
+			<option></option>
+			<option></option>
+		</select>
+	</div>
+	<input type="submit" class="btn btn-info" (click)="crear_Cuenta()" value="Crear Cuenta">
 </form>

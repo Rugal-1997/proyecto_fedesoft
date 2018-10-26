@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuariosService } from '../usuarios.service';
+import { HumedalesService } from '../humedales.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,15 +11,17 @@ import { Router } from '@angular/router';
 export class CrearCuentaComponent implements OnInit {
 
 	formulario:any;
+  nombreHumedal:Array<string>;
 
-  constructor(private usersService:UsuariosService, private router:Router) {
+  constructor(private usersService:UsuariosService, private router:Router, private humedal:HumedalesService) {
+    this.nombreHumedal=[humedal.nombre];
   	this.formulario={
   	  user:{
   	  	name: "",
   	  	email: "",
   	  	password: "",
   	  	password_confirmation: "",
-  	  	humedal_id: "" 
+  	  	humedal_id: ""
   	  }
   	}
   }
@@ -26,11 +29,15 @@ export class CrearCuentaComponent implements OnInit {
   ngOnInit() {
   }
 
+  humedalId(nombreHumedal){
+
+  }
+
   crear_Cuenta(){
 	this.usersService.crearCuenta(this.formulario).subscribe(respuesta=>{
 	  let autenticacion = {
 		auth:{
-	      email:this.formulario.user.email,
+	    email:this.formulario.user.email,
 		  password:this.formulario.user.password
 		}
 	  };
