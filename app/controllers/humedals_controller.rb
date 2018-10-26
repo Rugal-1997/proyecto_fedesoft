@@ -6,11 +6,13 @@ class HumedalsController < ApplicationController
   # GET /humedals.json
   def index
     @humedals = Humedal.all
+    render json: @humedals
   end
 
   # GET /humedals/1
   # GET /humedals/1.json
   def show
+    render json: @humedal
   end
 
   # POST /humedals

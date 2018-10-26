@@ -6,11 +6,13 @@ class ServiciosController < ApplicationController
   # GET /servicios.json
   def index
     @servicios = Servicio.all
+    render json: @servicios
   end
 
   # GET /servicios/1
   # GET /servicios/1.json
   def show
+    render json: @servicio
   end
 
   # POST /servicios

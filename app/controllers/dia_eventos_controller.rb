@@ -6,11 +6,13 @@ class DiaEventosController < ApplicationController
   # GET /dia_eventos.json
   def index
     @dia_eventos = DiaEvento.all
+    render json: @dia_eventos
   end
 
   # GET /dia_eventos/1
   # GET /dia_eventos/1.json
   def show
+    render json: @dia_evento
   end
 
   # POST /dia_eventos
