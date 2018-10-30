@@ -14,8 +14,8 @@ export class CrearCuentaComponent implements OnInit {
   nombreHumedal:Array<string>;
 
   constructor(private usersService:UsuariosService, private router:Router, private humedal:HumedalesService) {
-    this.nombreHumedal=[humedal.nombre];
-  	this.formulario={
+  	this.nombreHumedal=[];
+    this.formulario={
   	  user:{
   	  	name: "",
   	  	email: "",
@@ -29,8 +29,12 @@ export class CrearCuentaComponent implements OnInit {
   ngOnInit() {
   }
 
-  humedalId(nombreHumedal){
-
+  humedalId(){
+    this.humedal.traerHumedales().subscribe(respuesta=>{
+      
+    },error=>{
+      alert();
+    });
   }
 
   crear_Cuenta(){

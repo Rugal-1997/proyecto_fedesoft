@@ -11,8 +11,8 @@ export class HumedalesService {
 	encabezados:any;
 
   constructor(private http:HttpClient) {
-  	this.url="https://api-humedal.herokuapp.com/humedals";
-  	this.encabezados={ headers: new HttpHeaders({
+  	this.url="https://apifedesoft183.herokuapp.com/humedals";
+  	this.encabezados={headers: new HttpHeaders({
   		'Content-Type': 'Application/json',
   		'Authorization': 'Bearer '+localStorage.getItem('sessionToken')})
   	}
@@ -26,15 +26,15 @@ export class HumedalesService {
 	return this.http.get<any>(this.url+'/'+id,this.encabezados);
 	}
 
-  crearHumedal(humedal:string):Observable<any>{
+  crearHumedal(humedal:any):Observable<any>{
 	return this.http.post<any>(this.url,humedal,this.encabezados);
 	}
 
-  editarHumedal(humedal:string):Observable<any>{
+  editarHumedal(humedal:any):Observable<any>{
 	return this.http.put<any>(this.url+'/'+humedal.id,humedal,this.encabezados);
 	}
 
-  eliminarHumedal(id:string){
-	this.http.delete<any>(this.url+'/'+id,this.encabezados);
+  eliminarHumedal(id):Observable<any>{
+	return this.http.delete<any>(this.url+'/'+id,this.encabezados);
 	}
 }

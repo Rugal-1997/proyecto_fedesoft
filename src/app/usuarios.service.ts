@@ -11,8 +11,8 @@ export class UsuariosService {
 	encabezados:any;
 
   constructor(private http:HttpClient) {
-  	this.url="https://api-humedal.herokuapp.com";
-  	this.encabezados={ headers: new HttpHeaders({'Content-Type': 'Application/json'})
+  	this.url="https://apifedesoft183.herokuapp.com";
+  	this.encabezados={headers: new HttpHeaders({'Content-Type': 'Application/json'})
   	};
   }
 

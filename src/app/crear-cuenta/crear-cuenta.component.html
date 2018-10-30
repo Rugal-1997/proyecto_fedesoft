@@ -14,13 +14,12 @@
 	</div>
 	<div class="form-group">
 		<label>Confirmar contraseña</label>
-		<input type="password" name="password" class="form-control" [(ngModel)]="formulario.user.password_confirmation">
+		<input type="password" name="password_confirmation" class="form-control" [(ngModel)]="formulario.user.password_confirmation">
 	</div>
 	<div class="form-group">
 		<label>Seleccione el Humedal mas cercano</label>
-		<select class="form-control">
-			<option></option>
-			<option></option>
+		<select class="form-control" [(ngModel)]="formulario.user.humedal_id" [ngModelOptions]="{standalone: true}">
+			<option [ngValue]="1">Humedal Jaboque</option>
 		</select>
 	</div>
 	<input type="submit" class="btn btn-info" (click)="crear_Cuenta()" value="Crear Cuenta">

@@ -9,7 +9,7 @@
 	</thead>
 	<tbody>
 		<tr *ngFor="let humedal of humedals">
-			<td><a [routerLink]="['/humedals/'+humedal.id]">{{humedal.nombre}}</a></td>
+			<td>{{humedal.nombre}}</td>
 			<td>{{humedal.localidad}}</td>
 			<td>{{humedal.hectareas}}</td>
 			<td><button class="btn btn-success">Editar</button></td>

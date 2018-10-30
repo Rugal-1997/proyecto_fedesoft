@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { BarraNavegacionComponent } from './barra-navegacion/barra-navegacion.component';
 import { InicioComponent } from './inicio/inicio.component';
@@ -15,6 +15,7 @@ import { ServiciosComponent } from './servicios/servicios.component';
 import { UsuariosService } from './usuarios.service';
 import { HumedalesService } from './humedales.service';
 import { ServiciosService } from './servicios.service';
+import { InformacionComponent } from './informacion/informacion.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ServiciosService } from './servicios.service';
     CrearCuentaComponent,
     IniciarSesionComponent,
     HumedalesComponent,
-    ServiciosComponent
+    ServiciosComponent,
+    InformacionComponent
   ],
   imports: [
     BrowserModule,

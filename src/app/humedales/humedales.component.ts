@@ -8,27 +8,27 @@ import { HumedalesService } from '../humedales.service';
 })
 export class HumedalesComponent implements OnInit {
 
-	humedal:array<any>;
+	humedal:Array<any>;
 
   constructor(private humedales:HumedalesService) {
-  	this.humedal=[{nombre:"",localidad:"",hectareas:""}];
+  	this.humedal=[{id:"",nombre:"",localidad:"",hectareas:""}];
   }
 
   ngOnInit() {
   	this.humedales.traerHumedales().subscribe(respuesta=>{
-  		this.humedal.respuesta;
+  		this.humedal=respuesta;
   	},error=>{
   		alert('No se ha podido ver los humedales');
   	})
   }
 
-  eliminar_Humedal(){
+  eliminar_Humedal(id){
   	let confirmacion= confirm('Estas seguro');
 	  if(confirmacion){
 		this.humedales.eliminarHumedal(id).subscribe(respuestaEliminar=>{
 		  alert('Humedal Eliminado')
 		  this.humedales.traerHumedales().subscribe(respuesta=>{
-			this.humedal=respuesta;
+			this.humedal=respuestaEliminar;
 		  },error=>{
 			alert('No se han podido traer los Humedales');
 		  });
