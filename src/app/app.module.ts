@@ -11,11 +11,12 @@ import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
 import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.component';
 import { HumedalesComponent } from './humedales/humedales.component';
 import { ServiciosComponent } from './servicios/servicios.component';
+import { InformacionComponent } from './informacion/informacion.component';
+import { PiePaginaComponent } from './pie-pagina/pie-pagina.component';
 
 import { UsuariosService } from './usuarios.service';
 import { HumedalesService } from './humedales.service';
 import { ServiciosService } from './servicios.service';
-import { InformacionComponent } from './informacion/informacion.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { InformacionComponent } from './informacion/informacion.component';
     IniciarSesionComponent,
     HumedalesComponent,
     ServiciosComponent,
-    InformacionComponent
+    InformacionComponent,
+    PiePaginaComponent
   ],
   imports: [
     BrowserModule,
